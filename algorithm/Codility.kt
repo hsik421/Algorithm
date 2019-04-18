@@ -91,17 +91,12 @@ class Codility {
         all but one of the values in A occur an even number of times.
      */
     @Test
-    fun dddOccurrencesInArray(){
+    fun oddOccurrencesInArray(){
         val A = arrayOf(1,2,3,4,5,6,1,2,3,4,5)
-        val map = mutableMapOf<Int,Int>()
         var result = 0
         A.forEach { i ->
-            map[i] = map.getOrDefault(i,0) + 1
+            result = i.xor(result)
         }
-        map.filterValues { it == 1 }.forEach {
-            result = it.key
-        }
-
-        println(map)
+        println(result)
     }
 }

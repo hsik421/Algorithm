@@ -1,6 +1,7 @@
 package com.mobile.app.algorithm
 
 import org.junit.Test
+import kotlin.math.abs
 
 class Codility {
     /* cyclicRotation
@@ -137,11 +138,44 @@ class Codility {
     }
 
     @Test
-    fun PermMissingElem(){
+    fun permMissingElem(){
         val a = arrayOf(1,2,3,5,6)
         var sum = 0
         (0..a.size + 1).forEach { sum += it }
         a.forEach { sum -= it }
         print(sum)
     }
+    @Test
+    fun tapeEquilibrium(){
+        val A = arrayOf(3,1,2,4,3)
+
+        var result = 0
+        var total = 0
+        var sum = 0
+        A.forEach { total += it }
+        (1 until A.size).forEach { index ->
+            sum += A[index - 1]
+            if(index == 1){
+                result = abs(sum - (total - sum))
+            }else{
+                if(result > abs(sum - (total - sum))){
+                    result = abs(sum - (total - sum))
+                }
+            }
+        }
+        println("result = $result")
+    }
+    @Test
+    fun permCheck(){
+        val A = arrayOf(9, 5, 7, 3, 2, 7, 3, 1, 10, 8)
+        var result = 1
+        A.sort()
+        (1 until A.size + 1).forEach {
+            if(it != A[it - 1]){
+                result = 0
+            }
+        }
+        println(result)
+    }
+
 }

@@ -192,6 +192,5 @@ class Codility {
             }
         }
         println(result)
-        E:/hsik/github/Algorithm/app/src/test/java/com/mobile/app
     }
 }

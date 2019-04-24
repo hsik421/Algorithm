@@ -177,5 +177,21 @@ class Codility {
         }
         println(result)
     }
-
+    @Test
+    fun frugRiverOne(){
+        val A = arrayOf(1,3,1,3,2,1,3)
+        val X = 3
+        var result = -1
+        val map = hashMapOf<Int,Int>()
+        A.forEachIndexed { index, i ->
+            if(i <= X && map[i] == null){
+                map[i] = index
+            }
+            if(map.size == X){
+                result = map.values.max()?:-1
+            }
+        }
+        println(result)
+        E:/hsik/github/Algorithm/app/src/test/java/com/mobile/app
+    }
 }

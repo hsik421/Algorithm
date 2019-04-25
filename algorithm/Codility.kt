@@ -219,6 +219,5 @@ class Codility {
         result.forEach {
             println(it)
         }
-        E:/hsik/github/Algorithm/app/src/test/java/com/mobile/app
     }
 }

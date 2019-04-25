@@ -193,4 +193,32 @@ class Codility {
         }
         println(result)
     }
+    @Test
+    fun maxCounters(){
+        val A = arrayOf(3,4,4,6,1,4,4)
+        val N = 5
+        var result = IntArray(N)
+        var max = 0
+        var temp = 0
+
+        A.forEach {i->
+            if(N > i - 1){
+                val temp2 = result[i - 1] + 1
+                result[i - 1] = temp2
+                if(temp2 > max){
+                    max = temp2
+                }
+            }else{
+                if(temp < max){
+                    temp = max
+                    result = IntArray(N){temp}
+                }
+
+            }
+        }
+        result.forEach {
+            println(it)
+        }
+        E:/hsik/github/Algorithm/app/src/test/java/com/mobile/app
+    }
 }

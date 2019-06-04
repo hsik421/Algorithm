@@ -220,4 +220,19 @@ class Codility {
             println(it)
         }
     }
+    @Test
+    fun missingInteger(){
+        val A = arrayOf(1, 3, 6, 4, 1, 2)
+
+        val test = A.distinct()
+        run {
+            (1..Integer.MAX_VALUE).forEach {
+                if(!test.contains(it)){
+                    println(it)
+                    return@run
+                }
+            }
+            println(-1)
+        }
+    }
 }

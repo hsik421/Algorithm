@@ -45,7 +45,7 @@ class Codility {
     */
     @Test
     fun cyclicRotation(){
-        val A = intArrayOf()
+        val A = intArrayOf(0,1,2,3,4,5,6,7)
         val K = 10
 
         val temp = A.copyOf()
@@ -58,7 +58,10 @@ class Codility {
                 temp[index+num-A.size] = i
             }
         }
-        print(temp)
+        temp.forEach {
+            println(it)
+        }
+
     }
     /* dddOccurrencesInArray
         A non-empty array A consisting of N integers is given. The array contains an odd number of elements, and each element of the array can be paired with another element that has the same value, except for one element that is left unpaired.
@@ -97,8 +100,9 @@ class Codility {
         var result = 0
         A.forEach { i ->
             result = i.xor(result)
+            println("i[$i] = $result")
         }
-        println(result)
+
     }
     /*
         A small frog wants to get to the other side of the road. The frog is currently located at position X and wants to get to a position greater than or equal to Y. The small frog always jumps a fixed distance, D.
@@ -165,6 +169,7 @@ class Codility {
         }
         println("result = $result")
     }
+
     @Test
     fun permCheck(){
         val A = arrayOf(9, 5, 7, 3, 2, 7, 3, 1, 10, 8)
@@ -234,5 +239,49 @@ class Codility {
             }
             println(-1)
         }
+    }
+    /*A non-empty array A consisting of N integers is given. The consecutive elements of array A represent consecutive cars on a road.
+
+    Array A contains only 0s and/or 1s:
+
+    0 represents a car traveling east,
+    1 represents a car traveling west.
+    The goal is to count passing cars. We say that a pair of cars (P, Q), where 0 ≤ P < Q < N, is passing when P is traveling to the east and Q is traveling to the west.
+
+    For example, consider array A such that:
+
+    A[0] = 0
+    A[1] = 1
+    A[2] = 0
+    A[3] = 1
+    A[4] = 1
+    We have five pairs of passing cars: (0, 1), (0, 3), (0, 4), (2, 3), (2, 4).
+
+    Write a function:
+
+    fun solution(A: IntArray): Int
+
+    that, given a non-empty array A of N integers, returns the number of pairs of passing cars.
+
+    The function should return −1 if the number of pairs of passing cars exceeds 1,000,000,000.
+
+    For example, given:
+
+    A[0] = 0
+    A[1] = 1
+    A[2] = 0
+    A[3] = 1
+    A[4] = 1
+    the function should return 5, as explained above.
+
+    Write an efficient algorithm for the following assumptions:
+
+    N is an integer within the range [1..100,000];
+    each element of array A is an integer that can have one of the following values: 0, 1.*/
+    @Test
+    fun PassingCars(){
+        val A = intArrayOf(0,1,0,1,1)
+        val N = 5
+
     }
 }
